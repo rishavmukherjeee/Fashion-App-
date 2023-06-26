@@ -39,6 +39,7 @@ const Dashboard_makeup = ({ navigation }) => {
                   source={require('../assets/product.png')}
                   title=" "
                   style={styles.cardImage}
+                  resizeMode="contain"
                 />
               </View>
               <CardTitle subtitle="Number 6" />
@@ -55,6 +56,7 @@ const Dashboard_makeup = ({ navigation }) => {
                   source={require('../assets/product.png')}
                   title="Another card"
                   style={styles.cardImage}
+                  resizeMode="contain"
                 />
               </View>
               <CardTitle subtitle="Subtitle" />
@@ -73,6 +75,7 @@ const Dashboard_makeup = ({ navigation }) => {
                   source={require('../assets/product.png')}
                   title="Card 3"
                   style={styles.cardImage}
+                  resizeMode="contain"
                 />
               </View>
               <CardTitle subtitle="Subtitle" />
@@ -89,6 +92,7 @@ const Dashboard_makeup = ({ navigation }) => {
                   source={require('../assets/product.png')}
                   title="Card 4"
                   style={styles.cardImage}
+                  resizeMode="contain"
                 />
               </View>
               <CardTitle subtitle="Subtitle" />
