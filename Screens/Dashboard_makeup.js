@@ -56,7 +56,7 @@ const Dashboard_makeup = ({ navigation }) => {
               <CardTitle  title="nykaa" />
               <CardContent text="nyx professional Makeup" />
               <CardAction separator={true} inColumn={false}>
-                <CardButton onPress={() => {}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
+                <CardButton onPress={() => {navigation.navigate('Details')}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
                 <TouchableOpacity
                   style={[styles.heartButton, isHeartPressed[0] && styles.heartButtonPressed]}
                   onPress={() => handlePress(0)}
@@ -83,7 +83,7 @@ const Dashboard_makeup = ({ navigation }) => {
               <CardTitle  title="nykaa" />
               <CardContent text="nyx professional Makeup" />
               <CardAction separator={true} inColumn={false}>
-                <CardButton onPress={() => {}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
+                <CardButton onPress={() => {navigation.navigate('Details')}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
                 <TouchableOpacity
                   style={[styles.heartButton, isHeartPressed[1] && styles.heartButtonPressed]}
                   onPress={() => handlePress(1)}
@@ -112,7 +112,7 @@ const Dashboard_makeup = ({ navigation }) => {
               <CardTitle  title="nykaa" />
               <CardContent text="nyx professional Makeup" />
               <CardAction separator={true} inColumn={false}>
-                <CardButton onPress={() => {}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
+                <CardButton onPress={() => {navigation.navigate('Details')}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
                 <TouchableOpacity
                   style={[styles.heartButton, isHeartPressed[2] && styles.heartButtonPressed]}
                   onPress={() => handlePress(2)}
@@ -139,7 +139,7 @@ const Dashboard_makeup = ({ navigation }) => {
               <CardTitle  title="nykaa" />
               <CardContent text="nyx professional Makeup" />
               <CardAction separator={true} inColumn={false}>
-                <CardButton onPress={() => {}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
+                <CardButton onPress={() => {navigation.navigate('Details')}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
                 <TouchableOpacity
                   style={[styles.heartButton, isHeartPressed[3] && styles.heartButtonPressed]}
                   onPress={() => handlePress(3)}
