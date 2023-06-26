@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, ImageBackground, Dimensions, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-cards';
 
+// Rest of the code remains the same
+
 const Dashboard_makeup = ({ navigation }) => {
   const name = 'aishwariya';
 
@@ -25,8 +27,7 @@ const Dashboard_makeup = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../assets/Background.png')} style={{ width: '100%', height: '100%' }}>
-       
-<Text style={styles.greet}>hi, {name} text</Text>
+        <Text style={styles.greet}>hi, {name} text</Text>
         <TouchableOpacity onPress={handlepress}>
           <Image source={require('../assets/Buttons/Makeup.png')} style={styles.image} />
         </TouchableOpacity>
@@ -36,7 +37,7 @@ const Dashboard_makeup = ({ navigation }) => {
               <View style={styles.cardImageContainer}>
                 <CardImage
                   source={require('../assets/product.png')}
-                  title="Top 10 South African beaches"
+                  title=" "
                   style={styles.cardImage}
                 />
               </View>
@@ -132,27 +133,37 @@ const styles = StyleSheet.create({
   },
   card: {
     width: '48%',
-    borderColor: 'black', // Set card border color to black
-    borderWidth: 1, 
-    borderRadius:10,// Set card border width
-    // Set card background color to very light gray
+    borderColor: 'black',
+    borderWidth: 1,
+    borderRadius: 10,
+    overflow: 'hidden',
+    borderBottomWidth: 2,
+    borderBottomColor: 'black', // Set the color of the bottom border
   },
   cardImageContainer: {
-    flex:1,
     height: '50%',
     width: '100%',
-    
-    borderRadius:10,// Add margin bottom to separate image from title
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    overflow: 'hidden',
+    marginBottom: 10, // Add margin bottom to separate image from title
   },
   cardImage: {
-    flex: 1,
     backgroundColor: '#e9e9e9',
     alignContent: 'center',
-   justifyContent: 'center',
-    width: null,
-    height: null,
+    justifyContent: 'center',
     resizeMode: 'cover',
-    borderRadius:10,
+    borderRadius: 10,
+    width: '100%',
+    height: '100%',
+    right:20,
+    
+    aspectRatio: 1,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    overflow: 'hidden', 
+    borderBottomWidth: 1,
+  
   },
 });
 
