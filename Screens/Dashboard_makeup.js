@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, ImageBackground, Dimensions, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-cards';
 
@@ -6,8 +6,17 @@ import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 
 
 const Dashboard_makeup = ({ navigation }) => {
   const name = 'aishwariya';
+  const [isHeartPressed, setIsHeartPressed] = useState(Array(4).fill(false));
 
-  const handlepress = ({ nativeEvent }) => {
+  const handlePress = (index) => {
+    setIsHeartPressed((prevState) => {
+      const newState = [...prevState];
+      newState[index] = !prevState[index];
+      return newState;
+    });
+  };
+
+  const handleNavigation = ({ nativeEvent }) => {
     const { locationX } = nativeEvent;
     const { width } = Dimensions.get('window');
     const imageCenter = width / 2;
@@ -27,9 +36,12 @@ const Dashboard_makeup = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../assets/Background.png')} style={{ width: '100%', height: '100%' }}>
-        <Text style={styles.greet}>hi, {name} text</Text>
-        <TouchableOpacity onPress={handlepress}>
+      <Text style={styles.name}>hi, {name} !</Text>
+        <Text style={styles.beauty}>beauty starts here</Text>
+        <TouchableOpacity onPress={handleNavigation}>
           <Image source={require('../assets/Buttons/Makeup.png')} style={styles.image} />
+          <Text style={styles.weekly}>weekly top 4</Text>
+          <Text style={styles.perfect}>perfect-for-you based on your goals</Text>
         </TouchableOpacity>
         <ScrollView contentContainerStyle={styles.cardContainer}>
           <View style={styles.row}>
@@ -37,16 +49,26 @@ const Dashboard_makeup = ({ navigation }) => {
               <View style={styles.cardImageContainer}>
                 <CardImage
                   source={require('../assets/product.png')}
-                  title=" "
                   style={styles.cardImage}
                   resizeMode="contain"
                 />
               </View>
-              <CardTitle subtitle="Number 6" />
-              <CardContent text="Clifton, Western Cape" />
+              <CardTitle  title="nykaa" />
+              <CardContent text="nyx professional Makeup" />
               <CardAction separator={true} inColumn={false}>
-                <CardButton onPress={() => {}} title="Share" color='black' />
-                <CardButton onPress={() => {}} title="Explore" color='black' />
+                <CardButton onPress={() => {}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
+                <TouchableOpacity
+                  style={[styles.heartButton, isHeartPressed[0] && styles.heartButtonPressed]}
+                  onPress={() => handlePress(0)}
+                >
+                  <Image
+                    source={isHeartPressed[0] ? require('../assets/redheart.png') : require('../assets/heart.png')}
+                    style={styles.heartIcon}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.dotsButton}>
+                  <Image source={require('../assets/dots.png')} style={styles.dotsIcon} />
+                </TouchableOpacity>
               </CardAction>
             </Card>
 
@@ -54,16 +76,26 @@ const Dashboard_makeup = ({ navigation }) => {
               <View style={styles.cardImageContainer}>
                 <CardImage
                   source={require('../assets/product.png')}
-                  title="Another card"
                   style={styles.cardImage}
                   resizeMode="contain"
                 />
               </View>
-              <CardTitle subtitle="Subtitle" />
-              <CardContent text="Card content" />
+              <CardTitle  title="nykaa" />
+              <CardContent text="nyx professional Makeup" />
               <CardAction separator={true} inColumn={false}>
-                <CardButton onPress={() => {}} title="Button 1" color='black' />
-                <CardButton onPress={() => {}} title="Button 2" color='black' />
+                <CardButton onPress={() => {}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
+                <TouchableOpacity
+                  style={[styles.heartButton, isHeartPressed[1] && styles.heartButtonPressed]}
+                  onPress={() => handlePress(1)}
+                >
+                  <Image
+                    source={isHeartPressed[1] ? require('../assets/redheart.png') : require('../assets/heart.png')}
+                    style={styles.heartIcon}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.dotsButton}>
+                  <Image source={require('../assets/dots.png')} style={styles.dotsIcon} />
+                </TouchableOpacity>
               </CardAction>
             </Card>
           </View>
@@ -73,16 +105,26 @@ const Dashboard_makeup = ({ navigation }) => {
               <View style={styles.cardImageContainer}>
                 <CardImage
                   source={require('../assets/product.png')}
-                  title="Card 3"
                   style={styles.cardImage}
                   resizeMode="contain"
                 />
               </View>
-              <CardTitle subtitle="Subtitle" />
-              <CardContent text="Card content" />
+              <CardTitle  title="nykaa" />
+              <CardContent text="nyx professional Makeup" />
               <CardAction separator={true} inColumn={false}>
-                <CardButton onPress={() => {}} title="Button 1" color='black' />
-                <CardButton onPress={() => {}} title="Button 2" color='black' />
+                <CardButton onPress={() => {}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
+                <TouchableOpacity
+                  style={[styles.heartButton, isHeartPressed[2] && styles.heartButtonPressed]}
+                  onPress={() => handlePress(2)}
+                >
+                  <Image
+                    source={isHeartPressed[2] ? require('../assets/redheart.png') : require('../assets/heart.png')}
+                    style={styles.heartIcon}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.dotsButton}>
+                  <Image source={require('../assets/dots.png')} style={styles.dotsIcon} />
+                </TouchableOpacity>
               </CardAction>
             </Card>
 
@@ -90,16 +132,26 @@ const Dashboard_makeup = ({ navigation }) => {
               <View style={styles.cardImageContainer}>
                 <CardImage
                   source={require('../assets/product.png')}
-                  title="Card 4"
                   style={styles.cardImage}
                   resizeMode="contain"
                 />
               </View>
-              <CardTitle subtitle="Subtitle" />
-              <CardContent text="Card content" />
+              <CardTitle  title="nykaa" />
+              <CardContent text="nyx professional Makeup" />
               <CardAction separator={true} inColumn={false}>
-                <CardButton onPress={() => {}} title="Button 1" color='black' />
-                <CardButton onPress={() => {}} title="Button 2" color='black' />
+                <CardButton onPress={() => {}} title="View" style={{ borderRadius: 20, borderWidth: 1 }} color="black" />
+                <TouchableOpacity
+                  style={[styles.heartButton, isHeartPressed[3] && styles.heartButtonPressed]}
+                  onPress={() => handlePress(3)}
+                >
+                  <Image
+                    source={isHeartPressed[3] ? require('../assets/redheart.png') : require('../assets/heart.png')}
+                    style={styles.heartIcon}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.dotsButton}>
+                  <Image source={require('../assets/dots.png')} style={styles.dotsIcon} />
+                </TouchableOpacity>
               </CardAction>
             </Card>
           </View>
@@ -120,10 +172,27 @@ const styles = StyleSheet.create({
     marginLeft: 15,
     marginTop: 20,
   },
-  greet: {
-    fontSize: 30,
+  beauty: {
+    fontSize: 28,
     color: '#000',
-    paddingTop: 30,
+    paddingLeft: 20,
+  },
+  weekly: {
+    fontSize: 28,
+    color: '#000',
+    paddingLeft: 20,
+    paddingTop: 10,
+  },
+  perfect: {
+    fontSize: 16,
+    color: '#000',
+    paddingLeft: 20,
+    paddingBottom: 20,
+  },
+  name: {
+    fontSize: 16,
+    color: '#000',
+    paddingTop: 10,
     paddingLeft: 20,
   },
   cardContainer: {
@@ -150,7 +219,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     overflow: 'hidden',
-    marginBottom: 10, // Add margin bottom to separate image from title
+     // Add margin bottom to separate image from title
   },
   cardImage: {
     backgroundColor: '#e9e9e9',
@@ -160,14 +229,34 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: '100%',
     height: '100%',
-    right:20,
+    right: '14%',
     
     aspectRatio: 1,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    overflow: 'hidden', 
+    overflow: 'hidden',
     borderBottomWidth: 1,
-  
+  },
+  dotsButton: {
+    backgroundColor: 'transparent',
+    width: '20%',
+    height: '25%',
+    marginLeft: 10,
+  },
+  dotsIcon: {
+    width: '100%',
+    height: '100%',
+  },
+  heartButton: {
+    width: '20%',
+    height: '25%',
+    marginLeft: 10,
+  },
+  heartIcon: {
+    width: '120%',
+    height: '100%',
+  },
+  heartButtonPressed: {
   },
 });
 
