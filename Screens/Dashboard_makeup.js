@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, ImageBackground, Dimensions, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-cards';
+import ProductCardContainer from '../components/ProductCardContainer';
 
 // Rest of the code remains the same
 
@@ -155,6 +156,7 @@ const Dashboard_makeup = ({ navigation }) => {
               </CardAction>
             </Card>
           </View>
+          <ProductCardContainer/>
         </ScrollView>
       </ImageBackground>
     </View>
