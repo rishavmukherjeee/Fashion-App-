@@ -6,7 +6,13 @@ import { Padding, Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 
 const ProductGridViewContainer = () => {
   const navigation = useNavigation();
+  const [isAddPressed, setIsAddPressed] = React.useState([false, false]);
 
+  const handleAddPress = (index) => {
+    const updatedAddPressed = [...isAddPressed];
+    updatedAddPressed[index] = !updatedAddPressed[index];
+    setIsAddPressed(updatedAddPressed);
+  };
   return (
     <View style={[styles.ardimgProductGrid, styles.masterButtonsFlexBox]}>
       <View>
@@ -21,7 +27,7 @@ const ProductGridViewContainer = () => {
           <View style={styles.productCardsItem} />
           <Pressable
             style={styles.productCardsInner}
-            onPress={() => navigation.navigate("ProductDetailPage")}
+            onPress={() => navigation.navigate("Details")}
           />
           <View style={styles.lineView} />
           <View style={[styles.masterButtons, styles.viewWrapperBorder]}>
@@ -34,6 +40,7 @@ const ProductGridViewContainer = () => {
               Super match
             </Text>
           </View>
+          
           <View style={[styles.viewWrapper, styles.viewWrapperBorder]}>
             <Text style={styles.view}>View</Text>
           </View>
@@ -44,12 +51,13 @@ const ProductGridViewContainer = () => {
           />
           <Pressable
             style={[styles.add, styles.addPosition]}
-            onPress={() => navigation.navigate("DashboardSelection")}
+            onPress={() => handleAddPress()}
           >
             <Image
               style={styles.icon}
               resizeMode="cover"
-              source={require("../assets/add1.png")}
+              source={isAddPressed[1] ? require("../assets/add4.png") : require("../assets/add1.png")}
+            
             />
           </Pressable>
           <Image
@@ -62,7 +70,7 @@ const ProductGridViewContainer = () => {
           matchScoreText={require("../assets/u2604-1-1.png")}
           matchScoreDescription="Average match"
           onRectanglePressablePress={() =>
-            navigation.navigate("ProductDetailPage")
+            navigation.navigate("Details")
           }
         />
       </View>
@@ -78,7 +86,7 @@ const ProductGridViewContainer = () => {
           <View style={styles.productCardsItem} />
           <Pressable
             style={styles.productCardsInner}
-            onPress={() => navigation.navigate("ProductDetailPage")}
+            onPress={() => navigation.navigate("Details")}
           />
           <View style={styles.lineView} />
           <View style={[styles.masterButtons, styles.viewWrapperBorder]}>
@@ -99,11 +107,15 @@ const ProductGridViewContainer = () => {
             resizeMode="cover"
             source={require("../assets/add.png")}
           />
+          <Pressable
+
+            onPress={() => handleAddPress()}
+          >
           <Image
             style={[styles.add, styles.addPosition]}
             resizeMode="cover"
-            source={require("../assets/add1.png")}
-          />
+            source={isAddPressed[2] ? require("../assets/add4.png") : require("../assets/add1.png")}
+      /></Pressable>
           <Image
             style={styles.product51Icon}
             resizeMode="cover"
@@ -116,7 +128,7 @@ const ProductGridViewContainer = () => {
           propHeight="unset"
           propMarginLeft={4}
           onRectanglePressablePress={() =>
-            navigation.navigate("ProductDetailPage")
+            navigation.navigate("Details")
           }
         />
       </View>

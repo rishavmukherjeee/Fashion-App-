@@ -16,7 +16,7 @@ const TopbarContainer = () => {
       >
         <Pressable
           style={styles.autoLayoutHorizontalFlexBox}
-          onPress={() => navigation.navigate("DashboardMakeup")}
+          onPress={() => navigation.navigate("Makeup")}
         >
           <Image
             style={styles.iconlylightOutlinearrowL}

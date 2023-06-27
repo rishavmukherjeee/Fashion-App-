@@ -5,9 +5,10 @@ import {
   Pressable,
   Text,
   Image,
-  ImageSourcePropType,
+  ImageSourcePropType,TouchableOpacity
 } from "react-native";
 import { Color, Border, FontFamily, FontSize, Padding } from "../GlobalStyles";
+import { useNavigation } from "@react-navigation/native";
 
 const getStyleValue = (key, value) => {
   if (value === undefined) return;
@@ -31,7 +32,15 @@ const ProductCardsContainer = ({
       ...getStyleValue("marginLeft", propMarginLeft),
     };
   }, [propMarginLeft]);
+  
+  const [isAddPressed, setIsAddPressed] = React.useState([false, false]);
 
+  const handleAddPress = (index) => {
+    const updatedAddPressed = [...isAddPressed];
+    updatedAddPressed[index] = !updatedAddPressed[index];
+    setIsAddPressed(updatedAddPressed);
+  };
+  const navigation = useNavigation();
   return (
     <View style={styles.productCards}>
       <Pressable
@@ -61,24 +70,33 @@ const ProductCardsContainer = ({
           {matchScoreDescription}
         </Text>
       </View>
+
+      
       <View style={styles.viewWrapper}>
+      <TouchableOpacity onPress={()=> navigation.navigate("Details")}>
         <Text style={[styles.view, styles.viewFlexBox]}>View</Text>
+        </TouchableOpacity>
       </View>
+     
       <Image
         style={[styles.addIcon, styles.addIconPosition]}
         resizeMode="cover"
         source={require("../assets/add.png")}
       />
+       <Pressable
+            style={styles.addPosition}
+            onPress={() => handleAddPress(1)}
+          >
       <Image
         style={[styles.addIcon1, styles.addIconPosition]}
         resizeMode="cover"
-        source={require("../assets/add1.png")}
+        source={isAddPressed[1] ? require("../assets/add4.png") : require("../assets/add1.png")}
       />
       <Image
         style={styles.product51Icon}
         resizeMode="cover"
         source={require("../assets/product5-1.png")}
-      />
+      /></Pressable>
     </View>
   );
 };
