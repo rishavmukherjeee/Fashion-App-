@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     width: 40,
   },
   imgLayout: {
-    marginLeft: 16,
+    justifyContent: "center",
     height: 40,
     width: 40,
     borderWidth: 1,
@@ -226,7 +226,8 @@ const styles = StyleSheet.create({
   ardimgProductBig: {
     width: 375,
     paddingBottom: 40,
-    right:10
+    alignItems: "center",
+    justifyContentHorizontal: "center",
   },
 });
 

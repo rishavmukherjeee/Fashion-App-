@@ -4,6 +4,8 @@ import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 
 import ProductGridViewContainer from '../components/ProductGridViewContainer';
 import ProductCardsContainer from '../components/ProductCardsContainer';
 import ProductCardContainer from '../components/ProductCardContainer';
+import DiscoverMatchesContainer from '../components/DiscoverMatchesContainer';
+import ViewContainer from '../components/ViewContainer';
 
 // Rest of the code remains the same
 
@@ -87,6 +89,7 @@ const Dashboard_makeup = ({ navigation }) => {
             </View>
             <View style={styles.cardContainer}>
             <ProductCardContainer/>
+            
             </View>
         </ScrollView>
       </ImageBackground>
