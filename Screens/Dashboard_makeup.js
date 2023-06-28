@@ -119,45 +119,7 @@ const Dashboard_makeup = ({ navigation }) => {
                       }/></View>
                       
             </View>
-            <View style={styles.roww} >
-                      <View style={styles.gap}>
-                      <ProductCardsContainer
-                        matchScoreText={require("../assets/u26a1-2-21.png")}
-                        matchScoreDescription="super match"
-                        onRectanglePressablePress={() =>
-                          navigation.navigate("Details")
-                        }/>
-                      </View>
-                      <View style={styles.gap}>
-                      <ProductCardsContainer
-                      matchScoreText={require("../assets/u2b50-2-1.png")}
-                      matchScoreDescription="good match"
-                      propHeight="unset"
-                      propMarginLeft={4}
-                      onRectanglePressablePress={() =>
-                        navigation.navigate("Details")
-                      }/></View>
-            </View>
-      <View style={styles.roww} >
-                      <View style={styles.gap}>
-                      <ProductCardsContainer
-                        matchScoreText={require("../assets/u2604-1-1.png")}
-                        matchScoreDescription="Average match"
-                        onRectanglePressablePress={() =>
-                          navigation.navigate("Details")
-                        }
-                      /></View>
-                      <View style={styles.gap}>
-                      <ProductCardsContainer
-                      matchScoreText={require("../assets/u1f4a5-1.png")}
-                      matchScoreDescription="Poor match"
-                      propHeight="unset"
-                      propMarginLeft={4}
-                      onRectanglePressablePress={() =>
-                        navigation.navigate("Details")
-                      }/></View>
-                      
-            </View>
+           
             <View style={styles.cardContainer}>
             <ProductCardContainer/>
             
