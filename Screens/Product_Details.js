@@ -73,11 +73,14 @@ const Product_Details = () => {
        
       </ScrollView>
       {renderDots()}
-      
+      <Text style={{fontSize:15,color:'black',padding:20}}>m.a.c cosmetics</Text>
+      <Text style={{fontSize:20,color:'black',fontWeight:'bold',padding:20}}>m.a.c cosmetics profesional makeup</Text>
+      <PDPActionsContainer/>
+      <Text style={{fontSize:25,color:'black',fontWeight:'bold',padding:20,marginLeft:20}}>key benefits</Text>
 <ProductImageContainer/>
     </View>
-        <PDPActionsContainer/>
         <View style={styles.container}>
+          <Text style={{fontSize:25,color:'black',fontWeight:'bold',padding:20,marginLeft:10}}>expert reviews</Text>
       <ScrollView
         horizontal
       >

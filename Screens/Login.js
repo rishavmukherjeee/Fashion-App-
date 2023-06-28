@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Text, View,TouchableOpacity,TextInput } from 'react-native'
+import { ImageBackground, StyleSheet, Text, View,TouchableOpacity,TextInput, Image } from 'react-native'
 import React from 'react'
 import {  useNavigation } from '@react-navigation/native'
 
@@ -20,6 +20,7 @@ const Login = ({navigation}) => {
         <TouchableOpacity onPress={()=>navigation.navigate('Signup')}>
             <Text style={styles.signup}>Don't have an account? Sign up</Text>
         </TouchableOpacity>
+       
 
      </ImageBackground>
 

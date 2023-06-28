@@ -6,6 +6,9 @@ import ProductCardsContainer from '../components/ProductCardsContainer';
 import ProductCardContainer from '../components/ProductCardContainer';
 import DiscoverMatchesContainer from '../components/DiscoverMatchesContainer';
 import ViewContainer from '../components/ViewContainer';
+import ContainerView from '../components/ContainerView';
+import FrameComponent from '../components/FrameComponent';
+import BuyContainer from '../components/BuyContainer';
 
 // Rest of the code remains the same
 
@@ -43,6 +46,9 @@ const Dashboard_makeup = ({ navigation }) => {
       <ImageBackground source={require('../assets/Background.png')} style={{ width: '100%', height: '100%' }}>
         <Text style={styles.name}>hi, {name} !</Text>
         <Text style={styles.beauty}>beauty starts here</Text>
+        <TouchableOpacity style={{position:'absolute',right:30,top:30}}onPress={()=>navigation.navigate('Profile')}>
+        <Image source={require('../assets/dehaze.png')} style={{width:20,height :20}} />
+        </TouchableOpacity>
                     <TouchableOpacity onPress={handleNavigation}>
                       <Image source={require('../assets/Buttons/Makeup.png')} style={styles.image} />
                       <Text style={styles.weekly}>weekly top 4</Text>
@@ -121,6 +127,8 @@ const styles = StyleSheet.create({
     margin:'3%',
   },
   image: {
+    
+    resizeMode: 'contain',
     width: '90%',
     height: 51,
     paddingLeft: 20,

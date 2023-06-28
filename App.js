@@ -8,6 +8,7 @@ import Dashboard_Skincare from './Screens/Dashboard_Skincare';
 import Product_Details from './Screens/Product_Details';
 import LoginScreen from './Screens/Login';
 import Signup from './Screens/Signup';
+import Profile from './Screens/Profile';
 const Stack = createStackNavigator();
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Stack.Screen name="Makeup" component={Dashboard_makeup} />
           <Stack.Screen name="Skincare" component={Dashboard_Skincare} />
           <Stack.Screen name="Details" component={Product_Details} />
+          <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   )

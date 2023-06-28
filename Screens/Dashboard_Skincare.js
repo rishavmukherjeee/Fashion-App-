@@ -118,6 +118,8 @@ const styles = StyleSheet.create({
     margin:'3%',
   },
   image: {
+    
+    resizeMode: 'contain',
     width: '90%',
     height: 51,
     paddingLeft: 20,
