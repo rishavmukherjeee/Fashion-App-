@@ -1,5 +1,5 @@
 # Excercisee
-Intershala excercise completed
+Internshala excercise completed
 ```
 yarn install && yarn start
 ```
