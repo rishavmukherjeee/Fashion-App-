@@ -92,6 +92,7 @@ const Dashboard_makeup = ({ navigation }) => {
             
             </View>
         </ScrollView>
+        <Image source={require('../assets/Bottom.png')} style={{ height: '10%', width: '100%' }}></Image>
       </ImageBackground>
     </View>
   );

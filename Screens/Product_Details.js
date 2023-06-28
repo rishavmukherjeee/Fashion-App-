@@ -104,6 +104,7 @@ const Product_Details = () => {
 
 
       </ScrollView>
+      <Image source={require('../assets/Bottom.png')} style={{ height: '10%', width: '100%' }}></Image>
       </ImageBackground>
     </View>
   )
