@@ -5,7 +5,7 @@ yarn install && yarn start
 ```
 To build on phone use yarn install then
 ```
-npx react-native run-android --variant=releas
+npx react-native run-android --variant=release
 ```
 or 
 ```
