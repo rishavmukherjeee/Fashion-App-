@@ -9,6 +9,7 @@ import ViewContainer from '../components/ViewContainer';
 import ContainerView from '../components/ContainerView';
 import FrameComponent from '../components/FrameComponent';
 import BuyContainer from '../components/BuyContainer';
+import { TextInput } from 'react-native-gesture-handler';
 
 // Rest of the code remains the same
 
@@ -46,15 +47,39 @@ const Dashboard_makeup = ({ navigation }) => {
       <ImageBackground source={require('../assets/Background.png')} style={{ width: '100%', height: '100%' }}>
         <Text style={styles.name}>hi, {name} !</Text>
         <Text style={styles.beauty}>beauty starts here</Text>
+        <View style={{
+      flexDirection: 'row',
+      alignItems: 'center',
+      borderWidth: 1,
+      borderColor: 'lightgrey',
+      borderRadius: 10,
+      paddingHorizontal: 10,
+      marginHorizontal: 30,
+      marginBottom: 5,
+      marginTop: 5,
+    }}>
+      <Image source={require('../assets/search.png')} style={{
+        width: 20,
+        height: 20,
+        marginRight: 10,
+      }} />
+      <TextInput style={{
+        flex: 1,
+        height: 40,
+        fontSize: 16,
+        color: 'black',
+      }} placeholder="Search here" placeholderTextColor='black' />
+    </View>
         <TouchableOpacity style={{position:'absolute',right:30,top:30}}onPress={()=>navigation.navigate('Profile')}>
         <Image source={require('../assets/dehaze.png')} style={{width:20,height :20}} />
         </TouchableOpacity>
                     <TouchableOpacity onPress={handleNavigation}>
                       <Image source={require('../assets/Buttons/Makeup.png')} style={styles.image} />
-                      <Text style={styles.weekly}>weekly top 4</Text>
-                      <Text style={styles.perfect}>perfect-for-you based on your goals</Text>
+                      
                     </TouchableOpacity>
         <ScrollView >
+        <Text style={styles.weekly}>weekly top 4</Text>
+                      <Text style={styles.perfect}>perfect-for-you based on your goals</Text>
           <View style={styles.roww} >
                       <View style={styles.gap}>
                       <ProductCardsContainer
@@ -92,6 +117,46 @@ const Dashboard_makeup = ({ navigation }) => {
                       onRectanglePressablePress={() =>
                         navigation.navigate("Details")
                       }/></View>
+                      
+            </View>
+            <View style={styles.roww} >
+                      <View style={styles.gap}>
+                      <ProductCardsContainer
+                        matchScoreText={require("../assets/u26a1-2-21.png")}
+                        matchScoreDescription="super match"
+                        onRectanglePressablePress={() =>
+                          navigation.navigate("Details")
+                        }/>
+                      </View>
+                      <View style={styles.gap}>
+                      <ProductCardsContainer
+                      matchScoreText={require("../assets/u2b50-2-1.png")}
+                      matchScoreDescription="good match"
+                      propHeight="unset"
+                      propMarginLeft={4}
+                      onRectanglePressablePress={() =>
+                        navigation.navigate("Details")
+                      }/></View>
+            </View>
+      <View style={styles.roww} >
+                      <View style={styles.gap}>
+                      <ProductCardsContainer
+                        matchScoreText={require("../assets/u2604-1-1.png")}
+                        matchScoreDescription="Average match"
+                        onRectanglePressablePress={() =>
+                          navigation.navigate("Details")
+                        }
+                      /></View>
+                      <View style={styles.gap}>
+                      <ProductCardsContainer
+                      matchScoreText={require("../assets/u1f4a5-1.png")}
+                      matchScoreDescription="Poor match"
+                      propHeight="unset"
+                      propMarginLeft={4}
+                      onRectanglePressablePress={() =>
+                        navigation.navigate("Details")
+                      }/></View>
+                      
             </View>
             <View style={styles.cardContainer}>
             <ProductCardContainer/>
@@ -110,6 +175,20 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignContent:'center',
   
+
+  },
+  search: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    borderColor: '#fff',
+    color: '#000',
+    width: '90%',
+    marginLeft: 20,
+    marginTop: 20,
   },
   cardContainer: {
     alignContent: 'center',

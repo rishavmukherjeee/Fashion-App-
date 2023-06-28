@@ -20,8 +20,13 @@ const Login = ({navigation}) => {
         <TouchableOpacity onPress={()=>navigation.navigate('Signup')}>
             <Text style={styles.signup}>Don't have an account? Sign up</Text>
         </TouchableOpacity>
-       
-
+       <TouchableOpacity onPress={()=>navigation.navigate('Makeup')} >
+              <Image source={require('../assets/google.png')} style={{width: '100%', height: 50, alignSelf: 'center'}}/>
+       </TouchableOpacity>
+       <TouchableOpacity onPress={()=>navigation.navigate('Makeup')} >
+              <Image source={require('../assets/facebook.png')} style={{width: '100%', height: 50, alignSelf: 'center',margin:5}}/>
+       </TouchableOpacity>
+      
      </ImageBackground>
 
     </View>
@@ -67,7 +72,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginHorizontal: 30,
-        marginTop: 50,
+        marginTop: 30,
         marginBottom: 20,
     },
     signup: {
@@ -76,7 +81,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         marginHorizontal: 30,
-        marginTop: 50,
+        
         marginBottom: 20,
     },
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, Dimensions, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, ImageBackground, Dimensions, Image, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { Card, CardTitle, CardContent, CardAction, CardButton, CardImage } from 'react-native-cards';
 import ProductGridViewContainer from '../components/ProductGridViewContainer';
 import ProductCardsContainer from '../components/ProductCardsContainer';
@@ -41,12 +41,39 @@ const Dashboard_Skincare = ({ navigation }) => {
       <ImageBackground source={require('../assets/Background.png')} style={{ width: '100%', height: '100%' }}>
         <Text style={styles.name}>hi, {name} !</Text>
         <Text style={styles.beauty}>beauty starts here</Text>
+        <View style={{
+      flexDirection: 'row',
+      alignItems: 'center',
+      borderWidth: 1,
+      borderColor: 'lightgrey',
+      borderRadius: 10,
+      paddingHorizontal: 10,
+      marginHorizontal: 30,
+      marginBottom: 5,
+      marginTop: 5,
+    }}>
+      <Image source={require('../assets/search.png')} style={{
+        width: 20,
+        height: 20,
+        marginRight: 10,
+      }} />
+      <TextInput style={{
+        flex: 1,
+        height: 40,
+        fontSize: 16,
+        color: 'black',
+      }} placeholder="Search here" placeholderTextColor='black' />
+    </View>
+        <TouchableOpacity style={{position:'absolute',right:30,top:30}}onPress={()=>navigation.navigate('Profile')}>
+        <Image source={require('../assets/dehaze.png')} style={{width:20,height :20}} />
+        </TouchableOpacity>
                     <TouchableOpacity onPress={handleNavigation}>
                       <Image source={require('../assets/Buttons/Skincare.png')} style={styles.image} />
-                      <Text style={styles.weekly}>weekly top 4</Text>
-                      <Text style={styles.perfect}>perfect-for-you based on your goals</Text>
+                    
                     </TouchableOpacity>
         <ScrollView >
+        <Text style={styles.weekly}>weekly top 4</Text>
+                      <Text style={styles.perfect}>perfect-for-you based on your goals</Text>
           <View style={styles.roww} >
                       <View style={styles.gap}>
                       <ProductCardsContainer
@@ -84,6 +111,45 @@ const Dashboard_Skincare = ({ navigation }) => {
                       onRectanglePressablePress={() =>
                         navigation.navigate("Details")
                       }/></View>
+            </View>
+            <View style={styles.roww} >
+                      <View style={styles.gap}>
+                      <ProductCardsContainer
+                        matchScoreText={require("../assets/u26a1-2-21.png")}
+                        matchScoreDescription="super match"
+                        onRectanglePressablePress={() =>
+                          navigation.navigate("Details")
+                        }/>
+                      </View>
+                      <View style={styles.gap}>
+                      <ProductCardsContainer
+                      matchScoreText={require("../assets/u2b50-2-1.png")}
+                      matchScoreDescription="good match"
+                      propHeight="unset"
+                      propMarginLeft={4}
+                      onRectanglePressablePress={() =>
+                        navigation.navigate("Details")
+                      }/></View>
+            </View>
+      <View style={styles.roww} >
+                      <View style={styles.gap}>
+                      <ProductCardsContainer
+                        matchScoreText={require("../assets/u2604-1-1.png")}
+                        matchScoreDescription="Average match"
+                        onRectanglePressablePress={() =>
+                          navigation.navigate("Details")
+                        }
+                      /></View>
+                      <View style={styles.gap}>
+                      <ProductCardsContainer
+                      matchScoreText={require("../assets/u1f4a5-1.png")}
+                      matchScoreDescription="Poor match"
+                      propHeight="unset"
+                      propMarginLeft={4}
+                      onRectanglePressablePress={() =>
+                        navigation.navigate("Details")
+                      }/></View>
+                      
             </View>
             <View style={styles.cardContainer}>
             <ProductCardContainer/>
