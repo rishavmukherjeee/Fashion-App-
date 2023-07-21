@@ -1,5 +1,5 @@
-# Excercisee
-Internshala excercise completed
+# Fashion App front end in React native
+A basic structure of a fashion app 
 ```
 yarn install && yarn start
 ```
